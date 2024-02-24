@@ -15,12 +15,16 @@ function App() {
     };
 
     const handleCalculate = () => {
-        try {
-            setResult(eval(input));
-        } catch (error) {
-            setResult('Error');
-        }
-    };
+      if (input.trim() === '') {
+          setResult('');
+      } else {
+          try {
+              setResult(eval(input));
+          } catch (error) {
+              setResult('Error');
+          }
+      }
+  };
 
     return (
         <div className="calculator">
