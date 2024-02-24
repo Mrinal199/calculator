@@ -15,14 +15,14 @@ function App() {
     };
 
     const handleCalculate = () => {
-      if (input.trim() === '') {
-          setResult('');
-      } else {
-          try {
-              setResult(eval(input));
-          } catch (error) {
+      try {
+          if (input === '') {
               setResult('Error');
+          } else {
+              setResult(eval(input));
           }
+      } catch (error) {
+          setResult('Error');
       }
   };
 
